@@ -1,10 +1,12 @@
 ## Overview
 This example project demonstrates how to get TypeScript, KnockoutJS, RequireJS and jQuery to play nicely together.
 
+It uses the latest TypeScript source from the _develop_ branch of http://typescript.codeplex.com.
+
 ## How to:
 * Install node.js
-* Reopen your command prompt and run "npm install -g typescript@0.8.3"
-* Compile with "tsc --module AMD ./js/app/main.ts"
+* Download the latest TypeScript source and build it (you will end up with a `tsc.js` compiler for node.js)
+* `node "/path/to/tsc.js" --module AMD ./js/app/main.ts`
 
 ## Notes:
 Compiles with the latest source of TypeScript 0.9.0 BUT WILL NOT RUN WITH THE ALPHA RELEASE.
