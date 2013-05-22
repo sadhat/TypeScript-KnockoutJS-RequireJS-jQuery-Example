@@ -6,7 +6,8 @@ How to:
 3. Compile with "tsc --module AMD ./js/app/main.ts"
 
 Notes:
-Compiles with the latest source of TypeScript 0.9.0, too.
+Compiles with the latest source of TypeScript 0.9.0 BUT WILL NOT RUN WITH THE ALPHA RELEASE.
+This is because the alpha release ignored the ///<amd-dependency /> commentag.
 
 References:
 * knockout.amd.d.ts - DefinitelyTyped fork (https://github.com/diachedelic/DefinitelyTyped/blob/a9766db4a20ac65b47374f8aa8df95c7cd672eda/knockout/knockout.amd.d.ts)
