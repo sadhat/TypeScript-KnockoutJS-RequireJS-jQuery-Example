@@ -1,7 +1,9 @@
-define(["require", "exports", 'knockout', 'module', "jquery", "blinky"], function(require, exports, __ko__, __r__) {
+define(["require", "exports", 'knockout', 'module', 'jquery', "jquery.blinky"], function(require, exports, __ko__, __r__, __$__) {
     var ko = __ko__;
 
     var r = __r__;
+
+    var $ = __$__;
 
     $(function () {
         ko.applyBindings({

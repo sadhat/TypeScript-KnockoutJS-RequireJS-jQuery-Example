@@ -13,36 +13,26 @@
              * http://requirejs.org/docs/api.html#pathsfallbacks
              */
             paths: {
-                jquery: [
+                'jquery': [
                     "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.0.min",
                     "./vendor/jquery-2.0.0.min"
                 ],
-                knockout: [
+                'knockout': [
                     "http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1",
                     "./vendor/knockout-2.2.1"
                 ],
-                blinky: "./vendor/jquery.blinky"
+                'jquery.blinky': "./vendor/jquery.blinky"
             },
             /*
-             * Combining 'enforceDefine' and 'shim' allow IE to check if
-             * dependencies loaded successfully.  In this case, we put in a check
-             * for jQuery (which is not an AMD module).
+             * The 'jquery.blinky' plugin is not an AMD module, and as such must be shimmed.
              *
-             * Note that we do not look for 'ko' because KnockoutJS does not
-             * define window.ko in AMD mode.  As a result, IE users will not get
-             * the fallback script in the event of load failure.
-             *
-             * http://requirejs.org/docs/api.html#ieloadfail
              * http://requirejs.org/docs/api.html#config-shim
              * http://requirejs.org/docs/api.html#config-enforceDefine
              */
-            enforceDefine: true,
+            enforceDefine: false,
             shim: {
-                jquery: {
-                    exports: 'jQuery'
-                },
                 // make sure 'blinky', a jQuery plugin, depends on jQuery.
-                blinky: {
+                'jquery.blinky': {
                 	deps: ['jquery'],
                 	exports: 'jQuery.fn.blinky'
             	}

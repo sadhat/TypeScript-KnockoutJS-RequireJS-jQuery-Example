@@ -1,4 +1,4 @@
-///<reference path="./typings/jquery.d.ts" />
+///<reference path="./typings/jquery.amd.d.ts" />
 ///<reference path="./typings/jquery.blinky.d.ts" />
 ///<reference path="./typings/knockout.amd.d.ts" />
 

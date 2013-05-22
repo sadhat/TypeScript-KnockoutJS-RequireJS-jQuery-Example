@@ -1,16 +1,16 @@
 ///<reference path="../_references.d.ts" />
 
 // The below manually inserts arguments into "define()".
-// This is necessary because neither are true AMD modules, yet
-// they are dependencies which must be loaded.
+// This is necessary for dependencies which are not AMD modules,
+// or do not have TypeScript definitions as a module.
 //
 // Note that they don't work in TypeScript 0.9.0 alpha, but they have
 // fixed it since then (get the latest TypeScript source).
-///<amd-dependency path="jquery" />
-///<amd-dependency path="blinky" />
+///<amd-dependency path="jquery.blinky" />
 
 import ko = module('knockout')
 import r = module('module')
+import $ = module('jquery')
 
 $(() => {
 	// Test KnockoutJS
