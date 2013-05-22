@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <title>Ah yeah!</title>
+
+    <script type="text/javascript">
+        var require = {
+            // Base URL for scripts is the 'js' folder
+            baseUrl: "js",
+            /*
+             * You can specify 'fallback' paths for external dependencies, in case
+             * they fail to load (i.e. you're developing and don't have internet).
+             *
+             * http://requirejs.org/docs/api.html#pathsfallbacks
+             */
+            paths: {
+                jquery: [
+                    "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.0.min",
+                    "./vendor/jquery-2.0.0.min"
+                ],
+                knockout: [
+                    "http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1",
+                    "./vendor/knockout-2.2.1"
+                ],
+                blinky: "./vendor/jquery.blinky"
+            },
+            /*
+             * Combining 'enforceDefine' and 'shim' allow IE to check if
+             * dependencies loaded successfully.  In this case, we put in a check
+             * for jQuery (which is not an AMD module).
+             *
+             * Note that we do not look for 'ko' because KnockoutJS does not
+             * define window.ko in AMD mode.  As a result, IE users will not get
+             * the fallback script in the event of load failure.
+             *
+             * http://requirejs.org/docs/api.html#ieloadfail
+             * http://requirejs.org/docs/api.html#config-shim
+             * http://requirejs.org/docs/api.html#config-enforceDefine
+             */
+            enforceDefine: true,
+            shim: {
+                jquery: {
+                    exports: 'jQuery'
+                },
+                // make sure 'blinky', a jQuery plugin, depends on jQuery.
+                blinky: {
+                	deps: ['jquery'],
+                	exports: 'jQuery.fn.blinky'
+            	}
+            },
+            /*
+             * These are per-module config objects, very handy.
+             *
+             * http://requirejs.org/docs/api.html#config-moduleconfig
+             */
+            config: {
+                'app/main': {
+                    action: "http://bit.ly/192nbOw"
+                }
+            }
+        };
+    </script>
+    <script type="text/javascript" data-main="app/main" src="js/vendor/require.js"></script>
+</head>
+<body>
+    <h1>What's the time? <a data-bind="text: time, attr: { href: action }"></a></h1>
+</body>
+</html>
