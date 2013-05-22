@@ -1,3 +1,7 @@
-declare module JQuery {
-	export function blinky(any): JQuery;
+// Interfaces are merged together! Perfect for jQuery plugins.
+interface JQuery {
+    blinky(opt: {
+        frequency: number;
+        count: number;
+    }): JQuery;
 }

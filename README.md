@@ -3,17 +3,16 @@ This example project demonstrates how to get TypeScript, KnockoutJS, RequireJS a
 
 It uses the latest TypeScript source from the _develop_ branch of http://typescript.codeplex.com.
 
-## How to:
-* Install node.js
-* Download the latest TypeScript source and build it (you will end up with a `tsc.js` compiler for node.js)
-* `node "/path/to/tsc.js" --module AMD ./js/app/main.ts`
+## How to
+* Download TypeScript v0.8.3 or newer
+* Build `tsc ./js/app/main.ts` (without the --module AMD argument).
 
-## Notes:
-Compiles with the latest source of TypeScript 0.9.0 BUT WILL NOT RUN WITH THE ALPHA RELEASE.
-This is because the alpha release ignored the ///<amd-dependency /> commentag.
+## Note
+I was using `--module AMD` for a while but it's just too hard to use RequireJS plugins (like `require.text`)
+and the per-module config (see `index.html`).  You have to use the `///<amd-dependency />`
+undocumented feature and it just barely works.
 
 ## References:
-* knockout.amd.d.ts - DefinitelyTyped fork (https://github.com/diachedelic/DefinitelyTyped/blob/master/knockout/knockout.amd.d.ts)
-* jquery.d.ts - DefinitelyTyped
+* jquery.d.ts, knockout.d.ts & require.d.ts - DefinitelyTyped
 * jquery.blinky.js - http://aaron-powell.com/doing-it-wrong/blink
 
